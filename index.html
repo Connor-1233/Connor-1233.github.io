@@ -1,0 +1,104 @@
+<!-- Home Page -->
+<!DOCTYPE html>
+<html lang="engl">
+<head>
+    <meta charset="UTF-8">
+    <!-- Sets the viewport of the webpage to the width of the device and scales it to fit the screen. 
+    It ensures that the webpage is displayed correctly on different devices with varying screen sizes.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Portfolio of Connor Case, a Computer Science student at Georgia Institute of Technology, showcasing projects, skills, and experience in software development.">
+    <meta name="keywords" content="Connor Case, portfolio, software developer, computer science, Georgia Institute of Technology, projects, resume">
+    <meta name="author" content="Connor Case">
+    <!-- Base Styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <span>Con</span>nor</a>
+        <nav class="navbar">
+            <a href="#home" >Home</a>
+            <a href="#about">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="pdf/Resume.pdf" target="_blank">Resume</a>
+        </nav>
+        <a href="#contact-form" class="contact">Contact Me</a>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hi, I'm <span>Connor Case<br></span></h3>
+            <h2>I study Computer Science at the Georgia Institute of Technology</h2>
+
+            <p>
+                I am a software developer with a passion for creating innovative solutions to complex problems. 
+                I am always looking for new opportunities to learn and grow as a developer. 
+                I am currently seeking a full-time software engineering position.
+            </p>
+
+            <div class="btn-box">
+                <button class="btn-1">Hire Me</button>
+                <a href="projects.html" class="btn-2">Projects</a>
+            </div>
+        </div>
+
+        <div class="img-box">
+            <img src="imgs/waylonPhoto.jpeg" alt="Connor Case">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="imgs/bofaBuildingSelfie.jpeg" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Computer Science Student</h3>
+            <p>Introduction with education and work experience. Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Quam aut officia, suscipit harum temporibus nostrum earum! Commodi culpa debitis praesentium! 
+                Voluptatibus facilis suscipit repellat? Reiciendis quia voluptas sed harum possimus.</p>
+            
+            <a href="projects.html" class="btn-1">Projects</a>
+        </div>
+    </section>
+
+    <section class="contact-form" id="contact-form">
+        <h2 class="contact-me">Contact <span>Me</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+
+            <input type="submit" class="btn-1" value="Send Message">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.facebook.com/profile.php?id=100081814595898" target="_blank" class="social-icon"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://github.com/Connor-1233" target="_blank" class="social-icon"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/connor-case-a33531240/" target="_blank" class="social-icon"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://www.instagram.com/connor_case.12/" target="_blank" class="social-icon"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+
+        <p class="copyright"> @2024 Connor Case | All rights reserved</p>
+    </footer>
+
+    <script src="logic.js"></script>
+
+</body>
+</html>
+

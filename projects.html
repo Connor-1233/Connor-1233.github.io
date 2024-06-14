@@ -1,0 +1,85 @@
+<!-- Contact Page -->
+<!DOCTYPE html>
+<html lang="engl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/projects.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <span>Con</span>nor</a>
+        <nav class="navbar">
+            <a href="index.html" >Home</a>
+            <a href="index.html#about" class="nav__link">About</a>
+            <a href="projects.html" class="nav__link">Projects</a>
+            <a href="pdf/Resume.pdf" class="nav__link" target="_blank">Resume</a> 
+        </nav>
+        <a href="index.html#contact-form" class="contact">Contact Me</a>
+    </header>
+    
+    <main id="projects-main">
+        <h2 class="heading"> <span>My</span> Projects</h2>
+        <h2> I'm happy to share some of the projects I've worked on. Check them out below! </h2>
+    </main>
+
+    <section class="projects">
+        <div class="project">
+            <img src="imgs/openai.jpeg" alt="OpenAI Chatbot">
+            <div class="project-info">
+                <h3>OpenAI Chatbot</h3>
+                <p>
+                    A conversational chatbot with a Rust backend, utilizing OpenAI's GPT-3 API for 
+                    advanced natural language processing to deliver human-like interactions and responses.
+                </p>
+                <a href="https://github.com/Connor-1233/openai_chatbot" target="_blank" class="project-btn">Learn More!</a>
+            </div>
+        </div>
+        
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/cultured.png" alt="Cultured iOS App">
+            <div class="project-info">
+                <h3>Cultured: iOS App</h3>
+                <p>
+                    An interactive app built with Swift, SwiftUI, Firebase, and ARKit/RealityKit, enabling users to
+                    explore and learn about global cultures through engaging modules, games, and augmented reality tours.            </p>
+                <a href="https://devpost.com/software/cultured-zr06nf" target="_blank" class="project-btn">Learn More!</a>
+            </div>
+        </div>
+
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/dungeon.png" alt="Dungeon Crawler Game">
+            <div class="project-info">
+                <h3>Dungeon Crawler Game: Android App</h3>
+                <p>
+                    An engaging Android Studio dungeon crawler game leveraging Java for backend logic, 
+                    XML for UI design, and implemented robust MVVM architecture with design patterns including Strategy, 
+                    Singleton, Factory, and Decorator for maintainable and scalable code.
+                </p>
+                <a href="https://github.com/Connor-1233/CS2340_DungeonCrawlerApplication" target="_blank" class="project-btn">Learn More!</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#" class="social-icon"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="#" class="social-icon"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="#" class="social-icon"><i class='bx bxl-linkedin-square'></i></a>
+        </div>
+
+        <p class="copyright"> @2024 Connor Case | All rights reserved</p>
+    </footer>
+
+    <script src="logic.js"></script>
+</body>
+</html>
+

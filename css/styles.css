@@ -1,0 +1,303 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    /* background-color: rgba(138, 170, 229, 1); */
+    background-color: #000000;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 25px;
+    color: #F1F1F2;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #1995AD;
+    text-shadow: 0 0 25px #1995AD,
+                0 0 25px #1995AD;
+    transform: scale(1.1);
+}
+
+/* Style for the different color text */
+span {
+    color: #1995AD;
+}
+
+/* Navbar Styles */
+.navbar a{
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 500;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #1995AD;
+    border-bottom: 3px solid #1995AD;
+}
+
+/* Contact Button Styles */
+.contact {
+    padding: 10px 28px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.contact:hover {
+    background-color: #1995AD;
+    box-shadow: 0 0 25px #1995AD;
+    color: #FFFFFF;
+    border: 2px solid #1995AD;
+}
+
+/* Home Styles (introduction)*/
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    /* background-color: #EDF4F2;  */
+    display: flex;
+    align-items: center;
+    gap: 7em;
+    padding: 30px 12%;
+}
+
+.home-content{
+    max-width: 800px;
+}
+
+.home-content h3 {
+    font-size: 42px;
+}
+
+/* .home-content h1 {
+    font-size: 62px;
+    line-height: 1.2;
+} */
+
+.home-content h2 {
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.home-content p {
+    font-size: 18px;
+    margin: 20px 0 30px;
+}
+
+/* Button Styles in Home Section */
+.btn-box {
+    width: 345px;
+    display: flex;
+    gap: 2em;
+}
+
+.btn-1 {
+    padding: 15px 30px;
+    background-color: #1995AD;
+    color: #FFFFFF;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-1:hover {
+    background-color: #FFFFFF;
+    color: #1995AD;
+    border: 2px solid black;
+}
+
+.btn-2 {
+    padding: 15px 30px;
+    background-color: black;
+    color: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-2:hover {
+    background-color: #FFFFFF;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Image Style on Home Page */
+.img-box img{
+    border-radius: 50%;
+    width: 475px;
+    max-height: 500px;
+}
+
+/* Scrollbar and Trackpad Styles */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1995AD;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000;
+    width: 50px;
+}
+
+
+/* About Section Image Style */
+.about-img img{
+    position: right;
+    width: 475px;
+    box-shadow: 0 0 25px #1995AD, 
+                0 0 50px #1995AD;
+    border-radius: 50%;
+    /* margin-right: 2rem; */
+}
+
+/* About Section Styles */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12% 8%;
+    gap: 10em;
+    background-color: black;
+}
+
+.about-content h2{
+    text-align: left;
+    color: white;
+    font-size: 42px;
+}
+
+.about-content h3{
+    color: white;
+    font-size: 6dvb;
+}
+
+.about-content p{
+    color: white;
+    font-size: 20px;
+    margin: 2em 0 3em;
+}
+
+/* Contact Section Styles */
+.contact-form h2{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 36px;
+}
+
+.contact-form form{
+    max-width: 50em;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.contact-form form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-form form .input-box input, .contact-form form textarea{
+    width: 100%;
+    padding: 1.5em;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    border-radius: .8rem;
+    margin: 1rem 0;
+    resize: none;
+}
+
+/* Footer Styles */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #000000;
+}
+
+/* Social Media Styles */
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: white;
+}
+
+.footer .social a{
+    font-size: 24px;
+    color: white;
+    border: 2px solid #1995AD;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px #1995AD, 
+                      0 0 10px #1995AD;
+    transition: 0.3s ease;
+}
+
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: #1995AD;
+    border: 2px solid #1995AD;
+}
+
+/* Copyright Section Styles */
+footer .copyright{
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
