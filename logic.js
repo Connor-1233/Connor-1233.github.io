@@ -181,20 +181,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 body: new URLSearchParams(formData).toString()
             })
             .then(() => {
-                // Success
-                submitButton.value = 'Message Sent!';
-                submitButton.style.backgroundColor = '#28a745';
+                // Success - Show dramatic feedback
+                showSuccessOverlay();
                 
-                // Reset form after 3 seconds
+                // Reset form after overlay animation
                 setTimeout(() => {
                     contactForm.reset();
                     submitButton.value = originalButtonText;
                     submitButton.disabled = false;
                     submitButton.style.backgroundColor = '';
-                }, 3000);
-                
-                // Show success message
-                showNotification('Thank you! Your message has been sent successfully.', 'success');
+                }, 2500);
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -209,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     submitButton.style.backgroundColor = '';
                 }, 3000);
                 
-                // Show error message
+                // Show error notification
                 showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
             });
         });
@@ -259,6 +255,40 @@ function showNotification(message, type = 'success') {
     notification.querySelector('.notification-close').addEventListener('click', () => {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 300);
+    });
+}
+
+// Success overlay for form submission
+function showSuccessOverlay() {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'success-overlay';
+    overlay.innerHTML = `
+        <div class="success-content">
+            <div class="success-checkmark">
+                <i class='bx bx-check-circle'></i>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon!</p>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(overlay);
+    
+    // Show overlay with animation
+    setTimeout(() => overlay.classList.add('show'), 100);
+    
+    // Hide overlay after 2.5 seconds
+    setTimeout(() => {
+        overlay.classList.remove('show');
+        setTimeout(() => overlay.remove(), 500);
+    }, 2500);
+    
+    // Allow clicking overlay to close early
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('show');
+        setTimeout(() => overlay.remove(), 500);
     });
 }
 
