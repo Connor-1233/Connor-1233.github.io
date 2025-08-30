@@ -27,6 +27,11 @@
             <a href="projects.html">Projects</a>
             <a href="pdf/Resume.pdf" target="_blank">Resume</a>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <a href="#contact-form" class="contact">Contact Me</a>
     </header>
 
@@ -70,17 +75,22 @@
 
     <section class="contact-form" id="contact-form">
         <h2 class="contact-me">Contact <span>Me</span></h2>
-        <form action="#">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <!-- Hidden honeypot field for spam protection -->
+            <p style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            
             <div class="input-box">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Phone Number">
-                <input type="text" placeholder="Subject">
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
             
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
 
             <input type="submit" class="btn-1" value="Send Message">
         </form>
