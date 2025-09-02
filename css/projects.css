@@ -1,199 +1,334 @@
-/* Main Style for Introduction Text */
+/* Projects Page Body Override */
+body {
+    background-color: var(--background-dark);
+    min-height: 100vh;
+}
+
+/* Projects Page Specific Styles */
+
+/* Main Projects Page Layout */
 #projects-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-#projects-main h2 {
+    padding: 120px 5% 50px;
     text-align: center;
-    margin-top: 5em;
-    margin-bottom: 1em;
-    font-size: 30px;
+    width: 100%;
+    background-color: var(--background-dark);
 }
 
-/* Ensure the section spans the full width */
+#projects-main .heading {
+    font-size: 3.5rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+#projects-main .heading span {
+    color: var(--primary-color);
+}
+
+#projects-main h2:last-child {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Projects Section */
 .projects {
+    padding: 2rem 5%;
     width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
+    background-color: var(--background-dark);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* Style for each project */
+/* Remove old dividers */
+.divider {
+    display: none;
+}
+
+/* Project Tiles */
 .project {
-    box-sizing: border-box;
-    margin: 10px;
-    background-color: black;
-    color: white;
-    padding: 20px;
+    background: var(--background-dark);
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #1995AD;
-    /* width: calc(50% - 30px); Adjust the width */
-
+    padding: 2rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 450px;
 }
 
-.project img {
-    /* border-radius: 20%; */
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    height: 400px;
-    max-height: 400px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(25, 149, 173, 0.3), transparent);
+    transition: left 0.5s;
 }
 
+.project:hover::before {
+    left: 100%;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    background: var(--primary-color);
+    border-color: var(--text-light);
+    box-shadow: 0 20px 40px rgba(25, 149, 173, 0.5);
+}
+
+/* Project Image */
+.project img {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+    border-color: var(--text-light);
+    box-shadow: 0 10px 25px rgba(25, 149, 173, 0.4);
+}
+
+/* Project Info */
 .project-info {
-    margin-top: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    width: 100%;
 }
 
 .project-info h3 {
-    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    transition: color 0.3s ease;
 }
 
+.project:hover .project-info h3 {
+    color: var(--background-dark);
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    transition: color 0.3s ease;
+}
+
+.project:hover .project-info p {
+    color: var(--background-dark);
+}
+
+/* Project Button */
 .project-btn {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #1995AD;
-    color: white;
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    margin-top: auto;
 }
 
 .project-btn:hover {
-    background-color: #FFFFFF;
-    color: #1995AD;
-    border: 2px solid black;
-    
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
-/* Style for the divider */
-.divider {
-    width: 3px;
-    background-color: #1995AD;
-    margin: 0 10px; /* Adjust margin as needed */
-    height: auto;
+.project:hover .project-btn {
+    border-color: var(--background-dark);
+    color: var(--background-dark);
+    background: var(--text-light);
 }
 
-/* Media query for iPhone (max-width: 600px) */
-@media (max-width: 600px) {
+/* Animation for project tiles on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.project:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.project:nth-child(3n) {
+    animation-delay: 0.4s;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
     .projects {
-        flex-wrap: wrap; /* Allow projects to wrap on small screens */
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 1.5rem;
     }
-    .divider {
-        display: none; /* Hide divider on small screens */
+}
+
+@media (max-width: 768px) {
+    #projects-main {
+        padding: 100px 5% 30px;
     }
+    
+    #projects-main .heading {
+        font-size: 2.5rem;
+    }
+    
+    #projects-main h2:last-child {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .projects {
+        padding: 1rem 5%;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
     .project {
-        width: 90%; /* Adjust width to create more square-like proportions */
-        max-width: 350px; /* Limit maximum width for better proportions */
-        margin-bottom: 30px; /* Add spacing between projects */
-        padding: 15px; /* Reduce padding for better proportions */
-        aspect-ratio: 1; /* Force square container */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        padding: 1.5rem;
+        min-height: 400px;
     }
     
     .project img {
-        width: 100%;
-        height: 45%; /* Take up about half the square container */
-        object-fit: cover; /* Maintain aspect ratio while filling the space */
-        border-radius: 10px; /* Add some rounding to images */
-    }
-    
-    .project-info {
-        height: 50%; /* Take up the remaining space */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 10px;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
     }
     
     .project-info h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
     }
     
     .project-info p {
-        font-size: 14px;
-        line-height: 1.4;
-        flex-grow: 1;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 4; /* Limit to 4 lines */
-        line-clamp: 4; /* Standard property for compatibility */
-        -webkit-box-orient: vertical;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
     
     .project-btn {
-        margin-top: auto;
-        padding: 8px 12px;
-        font-size: 14px;
-        align-self: flex-start;
+        padding: 10px 25px;
+        font-size: 0.9rem;
     }
 }
 
-/* Media query for iPad (max-width: 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 520px) {
     .projects {
-        flex-wrap: wrap; /* Allow projects to wrap on medium screens */
-        justify-content: center;
-        gap: 20px;
+        grid-template-columns: 1fr;
+        padding: 1rem 3%;
     }
-    .divider {
-        display: none; /* Hide divider on medium screens */
-    }
+    
     .project {
-        width: calc(45% - 10px); /* Two projects per row with better proportions */
-        min-width: 300px;
-        max-width: 400px;
-        margin-bottom: 20px; /* Add spacing between projects */
-        aspect-ratio: 0.9; /* Slightly rectangular but closer to square */
-        display: flex;
-        flex-direction: column;
+        padding: 1.2rem;
+        min-height: 350px;
+    }
+    
+    #projects-main {
+        padding: 90px 3% 20px;
+    }
+    
+    #projects-main .heading {
+        font-size: 2rem;
+    }
+    
+    #projects-main h2:last-child {
+        font-size: 0.95rem;
     }
     
     .project img {
-        height: 50%; /* Adjust image height for better proportions */
-        object-fit: cover;
-        border-radius: 8px;
+        width: 80px;
+        height: 80px;
     }
     
-    .project-info {
-        height: 45%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 10px;
+    .project-info h3 {
+        font-size: 1.2rem;
     }
     
     .project-info p {
-        font-size: 15px;
+        font-size: 0.9rem;
         line-height: 1.5;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
     }
 }
 
-/* Media query for computers (min-width: 1025px) */
-@media (min-width: 1025px) {
+/* Hover effects for better interactivity */
+.project {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project:hover {
+    box-shadow: 
+        0 20px 40px rgba(25, 149, 173, 0.5),
+        0 0 0 1px rgba(25, 149, 173, 0.3);
+}
+
+/* Loading state for images */
+.project img {
+    transition: all 0.3s ease, opacity 0.5s ease;
+}
+
+.project img:not([src]) {
+    opacity: 0.5;
+    background: var(--primary-color);
+}
+
+/* Focus states for accessibility */
+.project:focus,
+.project-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Ensure projects layout works well with exactly 7 projects */
+@media (min-width: 769px) {
     .projects {
-        flex-wrap: nowrap; /* No wrapping on large screens */
+        max-width: 1200px;
     }
-    .divider {
-        display: block; /* Show divider on large screens */
-    }
-    .project {
-        width: calc(50% - 30px); /* Adjust the width for large screens */
+    
+    /* Make the last project center if odd number */
+    .project:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        max-width: 600px;
+        justify-self: center;
     }
 }
-

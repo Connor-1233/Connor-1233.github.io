@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Portfolio of Connor Case, a Computer Science student at Georgia Institute of Technology, showcasing projects, skills, and experience in software development.">
-    <meta name="keywords" content="Connor Case, portfolio, software developer, computer science, Georgia Institute of Technology, projects, resume">
+    <meta name="description" content="Connor Case - Computer Science student at Georgia Tech from Forsyth County. Passionate about software development, ultimate frisbee, chess, and exploring new technologies. View my portfolio and projects.">
+    <meta name="keywords" content="Connor Case, portfolio, software developer, computer science, Georgia Institute of Technology, Forsyth County, ultimate frisbee, chess, projects, resume">
     <meta name="author" content="Connor Case">
     <!-- Base Styles -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -19,13 +19,24 @@
 </head>
 
 <body>
+    <!-- Page Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>Con</span>nor
+            </div>
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Portfolio...</div>
+        </div>
+    </div>
+
     <header class="header">
         <a href="#" class="logo"> <span>Con</span>nor</a>
         <nav class="navbar">
             <a href="#home" >Home</a>
             <a href="#about">About</a>
             <a href="projects.html">Projects</a>
-            <a href="pdf/Resume.pdf" target="_blank">Resume</a>
+            <a href="skills.html">Skills</a>
         </nav>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -38,17 +49,18 @@
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hi, I'm <span>Connor Case<br></span></h3>
-            <h2>I study Computer Science at the Georgia Institute of Technology</h2>
+            <h2>BSCS at Georgia Institute of Technology</h2>
 
             <p>
-                I am a software developer with a passion for creating innovative solutions to complex problems. 
-                I am always looking for new opportunities to learn and grow as a developer. 
-                I am currently seeking a full-time software engineering position.
+                Here, you can check out what I'm currently working on and what projects I've completed in the past.
+                I have several personal projects that I've dabbled in, but I also have several group projects I've done 
+                in clubs or classes. This portfolio also contains skills and classes that I've taken at the Georgia Institute of Technology.
+                But most of all, this portfolio is meant to showcase how I create things with purpose and innovation.
             </p>
 
             <div class="btn-box">
-                <button class="btn-1">Hire Me</button>
-                <a href="projects.html" class="btn-2">Projects</a>
+                <a href="pdf/Resume.pdf" target="_blank" class="btn-1 btn-ripple">Resume</a>
+                <a href="pdf/Cover Letter.pdf" target="_blank" class="btn-2 btn-ripple">Cover Letter</a>
             </div>
         </div>
 
@@ -64,12 +76,35 @@
 
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>Computer Science Student</h3>
-            <p>Introduction with education and work experience. Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                Quam aut officia, suscipit harum temporibus nostrum earum! Commodi culpa debitis praesentium! 
-                Voluptatibus facilis suscipit repellat? Reiciendis quia voluptas sed harum possimus.</p>
+            <h3>Software Developer</h3>
+            <p>
+                I'm Connor Case, a passionate Computer Science student at the Georgia Institute of Technology, 
+                originally from Forsyth County. I love creating innovative software solutions that solve real-world problems. 
+                When I'm not coding, you'll find me playing ultimate frisbee, strategizing over a chess game, or exploring 
+                new restaurants around Atlanta. I'm always eager to learn new technologies and tackle challenging projects 
+                that push the boundaries of what's possible.
+            </p>
             
-            <a href="projects.html" class="btn-1">Projects</a>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <i class='bx bxs-map'></i>
+                    <span>Forsyth County, GA</span>
+                </div>
+                <div class="highlight-item">
+                    <i class='bx bx-run'></i>
+                    <span>Ultimate Frisbee</span>
+                </div>
+                <div class="highlight-item">
+                    <i class='bx bxs-chess'></i>
+                    <span>Chess Enthusiast</span>
+                </div>
+                <div class="highlight-item">
+                    <i class='bx bx-restaurant'></i>
+                    <span>Food Explorer</span>
+                </div>
+            </div>
+            
+            <a href="projects.html" class="btn-1 btn-ripple">View My Projects</a>
         </div>
     </section>
 
@@ -92,7 +127,7 @@
             
             <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
 
-            <input type="submit" class="btn-1" value="Send Message">
+            <input type="submit" class="btn-1 btn-ripple" value="Send Message">
         </form>
     </section>
 

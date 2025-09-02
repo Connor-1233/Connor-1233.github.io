@@ -4,20 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Connor Case Portfolio</title>
+    <meta name="description" content="Explore Connor Case's software development projects including OpenAI chatbot, iOS apps, and Android games. Computer Science student at Georgia Tech showcasing innovative solutions.">
+    <meta name="keywords" content="Connor Case, projects, software development, OpenAI chatbot, iOS app, Android game, Swift, Java, Rust, Georgia Tech">
+    <meta name="author" content="Connor Case">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/projects.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- Page Loading Animation -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span>Con</span>nor
+            </div>
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading Projects...</div>
+        </div>
+    </div>
+
     <header class="header">
         <a href="#" class="logo"> <span>Con</span>nor</a>
         <nav class="navbar">
             <a href="index.html" >Home</a>
             <a href="index.html#about" class="nav__link">About</a>
             <a href="projects.html" class="nav__link">Projects</a>
-            <a href="pdf/Resume.pdf" class="nav__link" target="_blank">Resume</a> 
+            <a href="skills.html" class="nav__link">Skills</a>
         </nav>
         <div class="hamburger" id="hamburger">
             <span></span>
@@ -36,25 +50,56 @@
         <div class="project">
             <img src="imgs/openai.jpeg" alt="OpenAI Chatbot">
             <div class="project-info">
-                <h3>OpenAI Chatbot</h3>
+                <h3>OpenAI Conversational Agent</h3>
                 <p>
-                    A conversational chatbot with a Rust backend, utilizing OpenAI's GPT-3 API for 
-                    advanced natural language processing to deliver human-like interactions and responses.
+                    A robust conversational chatbot developed with Rust and OpenAI API for 
+                    advanced natural language processing. Built during internship at Hyperbloom with FastAPI backend, 
+                    React frontend, and Retrieval-Augmented Generation for enhanced response quality.
                 </p>
-                <a href="https://github.com/Connor-1233/openai_chatbot" target="_blank" class="project-btn">Learn More!</a>
+                <a href="https://github.com/Connor-1233/openai_chatbot" target="_blank" class="project-btn btn-ripple">Learn More!</a>
             </div>
         </div>
         
         <div class="divider"></div> <!-- Divider -->
 
         <div class="project">
-            <img src="imgs/cultured.png" alt="Cultured iOS App">
+            <img src="imgs/keepsake_logo.png" alt="Keepsake iOS App">
+            <div class="project-info">
+                <h3>Keepsake: AI-Powered Journaling & AR Scrapbooking</h3>
+                <p>
+                    Revolutionary iOS app combining AI-enhanced journaling with augmented reality scrapbooking. Features OpenAI integration for intelligent prompts, 
+                    RealityKit for immersive 3D photo placement, Multipeer Connectivity for real-time collaboration, 
+                    Apple Watch integration, and Firebase backend for seamless data management across devices.
+                </p>
+                <a href="https://devpost.com/software/keepsake-dw36fx" target="_blank" class="project-btn btn-ripple">Learn More!</a>
+            </div>
+        </div>
+        
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/cultured_logo.png" alt="Cultured iOS App">
             <div class="project-info">
                 <h3>Cultured: iOS App</h3>
                 <p>
                     An interactive app built with Swift, SwiftUI, Firebase, and ARKit/RealityKit, enabling users to
                     explore and learn about global cultures through engaging modules, games, and augmented reality tours.            </p>
-                <a href="https://devpost.com/software/cultured-zr06nf" target="_blank" class="project-btn">Learn More!</a>
+                <a href="https://devpost.com/software/cultured-zr06nf" target="_blank" class="project-btn btn-ripple">Learn More!</a>
+            </div>
+        </div>
+
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/nomad_logo.png" alt="Nomad iOS App">
+            <div class="project-info">
+                <h3>Nomad: Navigation iOS App</h3>
+                <p>
+                    Full-stack iOS application built with Swift and SwiftUI that consolidates all navigation processes into one app. 
+                    Integrated Generative AI with OpenAI API, Yelp integration, and Firebase backend, featuring dynamic UI 
+                    with chatbot functionalities for enhanced user experience.
+                </p>
+                <a href="https://github.com/Connor-1233/Nomad-App" target="_blank" class="project-btn btn-ripple">Learn More!</a>
             </div>
         </div>
 
@@ -63,13 +108,43 @@
         <div class="project">
             <img src="imgs/dungeon.png" alt="Dungeon Crawler Game">
             <div class="project-info">
-                <h3>Dungeon Crawler Game: Android App</h3>
+                <h3>Shadow's Labyrinth: Android Dungeon Crawler</h3>
                 <p>
                     An engaging Android Studio dungeon crawler game leveraging Java for backend logic, 
                     XML for UI design, and implemented robust MVVM architecture with design patterns including Strategy, 
                     Singleton, Factory, and Decorator for maintainable and scalable code.
                 </p>
-                <a href="https://github.com/Connor-1233/CS2340_DungeonCrawlerApplication" target="_blank" class="project-btn">Learn More!</a>
+                <a href="https://github.com/Connor-1233/CS2340_DungeonCrawlerApplication" target="_blank" class="project-btn btn-ripple">Learn More!</a>
+            </div>
+        </div>
+
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/drone_img.png" alt="Autonomous Drone Project">
+            <div class="project-info">
+                <h3>Better Place Drones: Forest Fire Detection</h3>
+                <p>
+                    Contributing to XPRIZE competition with 300+ teams to develop autonomous drones for forest fire fighting. 
+                    Developing flight control algorithms using Ardupilot Mission Planner and QGroundControl, 
+                    while contributing to machine learning models for fire detection and spread pattern prediction.
+                </p>
+                <a href="https://www.xprize.org/prizes/wildfire" target="_blank" class="project-btn btn-ripple">Learn More!</a>
+            </div>
+        </div>
+
+        <div class="divider"></div> <!-- Divider -->
+
+        <div class="project">
+            <img src="imgs/waylonPhoto.jpeg" alt="Portfolio Website">
+            <div class="project-info">
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    A modern, responsive portfolio website showcasing my skills, projects, and experience. 
+                    Built with HTML5, CSS3, and JavaScript, featuring clean design, smooth animations, 
+                    mobile optimization, and interactive elements to present my professional work effectively.
+                </p>
+                <a href="https://github.com/Connor-1233/Portfolio-Website" target="_blank" class="project-btn btn-ripple">View Code</a>
             </div>
         </div>
     </section>
