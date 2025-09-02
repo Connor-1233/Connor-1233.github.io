@@ -75,10 +75,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Handle cross-page navigation from localStorage
     const scrollTarget = localStorage.getItem("scrollTarget");
     if (scrollTarget) {
+        console.log("Found scroll target in localStorage:", scrollTarget);
         localStorage.removeItem("scrollTarget"); // Clear it so it doesn't happen again
         setTimeout(() => {
             const targetElement = document.querySelector(`#${scrollTarget}`);
             if (targetElement) {
+                console.log("Scrolling to target element:", targetElement);
                 const header = document.querySelector('.header');
                 const headerHeight = header ? header.offsetHeight : 80;
                 // For about section, scroll slightly more to eliminate white sliver
@@ -97,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     targetLink.classList.add("active");
                     localStorage.setItem("activeLink", `#${scrollTarget}`);
                 }
+            } else {
+                console.log("Target element not found:", scrollTarget);
             }
         }, 100); // Small delay to ensure page is fully loaded
     }
@@ -136,37 +140,40 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    contactLink.addEventListener("click", function(event) {
-        const href = contactLink.getAttribute("href");
-        if (href.includes("#")) {
-            // Check if it's a cross-page link (starts with index.html)
-            if (href.startsWith("index.html#")) {
-                // Allow normal navigation and store target for when page loads
-                const targetSection = href.split("#")[1];
-                localStorage.setItem("scrollTarget", targetSection);
-                // Don't prevent default - let it navigate to the other page
-            } else {
-                // Same page navigation
-                event.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    // Calculate offset for fixed header
-                    const header = document.querySelector('.header');
-                    const headerHeight = header ? header.offsetHeight : 80; // fallback to 80px
-                    // No extra padding for about section to make it flush with header
-                    const extraPadding = href === '#about' ? 0 : 20;
-                    const elementPosition = targetElement.offsetTop - headerHeight - extraPadding;
-                    
-                    window.scrollTo({
-                        top: Math.max(0, elementPosition), // Ensure we don't scroll above page top
-                        behavior: 'smooth'
-                    });
+    if (contactLink) {
+        contactLink.addEventListener("click", function(event) {
+            const href = contactLink.getAttribute("href");
+            if (href.includes("#")) {
+                // Check if it's a cross-page link (starts with index.html)
+                if (href.startsWith("index.html#")) {
+                    // Allow normal navigation and store target for when page loads
+                    const targetSection = href.split("#")[1];
+                    localStorage.setItem("scrollTarget", targetSection);
+                    // Don't prevent default - let it navigate to the other page
+                    console.log("Cross-page navigation to:", targetSection);
+                } else {
+                    // Same page navigation
+                    event.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        // Calculate offset for fixed header
+                        const header = document.querySelector('.header');
+                        const headerHeight = header ? header.offsetHeight : 80; // fallback to 80px
+                        // No extra padding for about section to make it flush with header
+                        const extraPadding = href === '#about' ? 0 : 20;
+                        const elementPosition = targetElement.offsetTop - headerHeight - extraPadding;
+                        
+                        window.scrollTo({
+                            top: Math.max(0, elementPosition), // Ensure we don't scroll above page top
+                            behavior: 'smooth'
+                        });
+                    }
+                    localStorage.setItem("scrollTarget", href.split("#")[1]);
                 }
-                localStorage.setItem("scrollTarget", href.split("#")[1]);
             }
-        }
-        activateLink(this, false);
-    });
+            activateLink(this, false);
+        });
+    }
 
     // Handle all cross-page navigation links
     function handleCrossPageNavigation() {
