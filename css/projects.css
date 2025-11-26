@@ -134,6 +134,7 @@ body {
 }
 
 .project-info p {
+    text-align: justify;
     font-size: 1rem;
     color: var(--text-light);
     line-height: 1.6;
