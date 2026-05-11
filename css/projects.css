@@ -35,7 +35,7 @@ body {
 }
 
 /* Projects Section */
-.projects {
+/* .projects {
     padding: 2rem 5%;
     width: 100%;
     background-color: var(--background-dark);
@@ -43,6 +43,21 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 2rem;
     max-width: 1400px;
+    margin: 0 auto;
+} */
+
+/* Projects Section */
+.projects {
+    padding: 2rem 5%;
+    width: 100%;
+    background-color: var(--background-dark);
+    display: grid;
+
+    /* Force 2 columns on desktop/larger screens */
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2rem;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -200,9 +215,19 @@ body {
 }
 
 /* Mobile Responsiveness */
+
+@media (max-width: 1400px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+        max-width: 1200px;
+    }
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
     .projects {
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 }
@@ -321,15 +346,4 @@ body {
 }
 
 /* Ensure projects layout works well with exactly 7 projects */
-@media (min-width: 769px) {
-    .projects {
-        max-width: 1200px;
-    }
-    
-    /* Make the last project center if odd number */
-    .project:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-        max-width: 600px;
-        justify-self: center;
-    }
-}
+
